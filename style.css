@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 6.25%;
+  font-family: "Mulish", sans-serif;
+
+  --title-page: #02799D;
+  --title: #E1E1E6;
+  --description: #C4C4CC;
+  --background: #121214;
+  --card-background: #202024;
+  --card-border: #323238;
+}
+
+body {
+  background-color: var(--background);
+
+  padding: clamp(36rem, 50rem + 2vw, 72rem) clamp(55rem, 46rem + 1.5vw, 110rem);
+  margin-inline: auto;
+}
+
+main {
+  max-width: fit-content;
+
+  margin-inline: auto;
+}
+
+#title {
+  margin-bottom: 62rem;
+}
+
+#title h1 {
+  font-size: clamp(32rem, 40rem + 1vw, 58rem);
+  font-weight: 900;
+  color: var(--title-page);
+
+  margin-bottom: 8rem;
+}
+
+#title p {
+  font-size: clamp(20rem, 18rem + 1vw, 32rem);
+  font-weight: 600;
+  color: var(--title);
+}
+
+#gallery {
+  max-width: fit-content;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 44rem;
+  column-gap: 60rem;
+}
+
+.card {
+  max-width: 366rem;
+  width: 100%;
+
+  border: 2rem solid var(--card-border);
+  border-radius: 8rem;
+
+  background-color: var(--card-background);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card .description {
+  padding: clamp(16rem, 10rem + 0.5vw, 24rem) clamp(14rem, 12rem + 0.5vw, 22rem) clamp(24rem, 18rem + 0.5vw, 38rem);
+}
+
+.card .description h2 {
+  font-size: 34rem;
+  font-weight: 900;
+  color: var(--title);
+
+  margin-bottom: 24rem;
+}
+
+.card .description p {
+  font-size: 18rem;
+  font-weight: 600;
+  color: var(--description);
+}
+
+@media (max-width: 1200px) {
+  #gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  #gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60rem;
+  }
+}
+
+@media (max-width: 842px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #title * {
+    text-align: center;
+  }
+
+  #gallery {
+    grid-template-columns: 1fr;
+    gap: 40rem;
+  }
+}
